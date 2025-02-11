@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+
+:root {
+    --max-width: 250px; /* Define o limite máximo */
+    --width-verde: min(200px, var(--max-width));
+    --width-amarelo: min(100px, var(--max-width));
+    --width-vermelho: min(150px, var(--max-width));
+    --width-azul: min(180px, var(--max-width));
+  
+    --color-verde: #3EB394;
+    --color-amarelo: #EBE636;
+    --color-vermelho: #EF5B38;
+    --color-azul: #3BCDF4;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    display: flex;
+    justify-content: center; /* Centraliza na horizontal */
+    align-items: center; /* Centraliza na vertical */
+    height: 100vh; /* Garante que o body ocupe toda a tela */
+    margin: 0; /* Remove margens padrão */
+    background: #232228;
+}
+
+.menu {
+    color: #c2c1c1;
+    display: flex;
+    flex-wrap: wrap; /* Permite que os elementos quebrem linha */
+    justify-content: center; /* Centraliza os elementos horizontalmente */
+    align-items: center; /* Centraliza os elementos verticalmente */
+    width: 650px;
+    height: 650px;
+    padding: 20px; /* Espaço interno da borda */
+    gap: 20px; /* Espaço entre os containers */
+    transition: justify-content 0.5s ease; /* Transição suave */
+}
+
+
+.container {
+    width: 300px;
+    height: 300px;
+    border-radius: 40px;
+    position: relative;
+    box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.8);
+}
+
+.container.verde{ background: radial-gradient(circle at top right, #126156 5%, #151419 50%);}
+.container.amarelo{ background: radial-gradient(circle at top right, #8f6d30 5%, #151419 50%);}
+.container.vermelho{ background: radial-gradient(circle at top right, #562a25 5%, #151419 50%);}
+.container.azul{ background: radial-gradient(circle at top right, #0e3059 5%, #151419 50%);}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: -2px; 
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    border-radius: 42px;
+}
+
+.container.verde::before{ background: radial-gradient(circle at top right, var(--color-verde) 5%, #46464F 30%);}
+.container.amarelo::before{ background: radial-gradient(circle at top right, var(--color-amarelo) 5%, #46464F 30%);}
+.container.vermelho::before{ background: radial-gradient(circle at top right, var(--color-vermelho) 5%, #46464F 30%);}
+.container.azul::before{ background: radial-gradient(circle at top right, var(--color-azul) 5%, #46464F 30%);}
+
+hr {
+    position: relative;
+    border: none;
+    height: 2px;  /* Espessura da linha */
+    background-color: #676470;  /* Cor da linha */
+    width: 100%;  /* Largura da linha */
+    margin-top: -10px;
+}
+
+.data{
+  display: flex;
+  justify-content: space-between; /* Distribui os elementos */
+  align-items: center; /* Centraliza verticalmente */
+  margin: 15px 25px;
+  height: 30px;
+}
+
+.name {
+  display: grid;
+  grid-template-rows: auto auto; /* Garante que os elementos tenham altura ajustável */
+  place-items: center; /* Centraliza os itens na horizontal e vertical */
+  margin: 25px;
+  transition: transform 0.3s ease; /* Suaviza a transição */
+}
+
+.name:hover{
+   transform: scale(1.1); /* Aumenta a escala em 20% */
+}
+
+.progress{
+  display: grid;
+  grid-template-rows: auto auto; /* Garante que os elementos tenham altura ajustável */
+  height: 40px;
+  margin: 25px;
+}
+
+.prog_total{
+  background: #46464F;
+  border-radius: 4px;
+  height: 8px;
+}
+
+.prog{
+   border-radius: 4px;
+   height: 8px;
+}
+
+.prog.verde{ background: #3EB394;  width: var( --width-verde);} /* substitui o valor do width por uma váriável*/
+.prog.amarelo{ background: #EBE636;  width: var( --width-amarelo);} /* manupula a variável pelo js */
+.prog.vermelho{ background: #EF5B38;  width: var( --width-vermelho);}
+.prog.azul{ background: #3BCDF4;  width: var( --width-azul);}
+
+.implemento{
+  display:flex;
+  justify-content: space-between; /* Distribui os elementos */
+  align-items: center; /* Centraliza verticalmente */
+  margin: 0px 25px;
+}
+
+.mais, .menos{
+  display:flex;
+  justify-content: center; /* Centraliza na horizontal */
+  align-items: center; /* Centraliza na vertical */
+  background-color: : transparent;
+  color: #46464F;
+  border: solid #46464F 2px;
+  height: 30px;
+  width: 40px;
+  border-radius: 20px;
+}
+
+.mais:hover , .menos:hover{
+  color: #fff;
+  background-color: #46464F;
+  border: solid #fff 2px;
+}
